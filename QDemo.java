@@ -3,17 +3,17 @@ class Queue {
 	char[] q;
 	int putloc,getloc;//указали на элементы оченреди
 	
-	Queue (int size) {
+	public Queue (int size) {
 		q = new char[size];
 		putloc = getloc = 0;
 	}
 
 
 	//Метод лоя помещения символа в очередь
-	void put(char ch) {
+	public void put(char ch) {
 		if(putloc==q.lengeth) {
 			System.out.println(" - невозможно вставить символ,т,к очередь переполнена.");
-			return (char);
+			return;
 		}
 		return q[getloc++];
 	}
@@ -62,5 +62,8 @@ class qDemo {
 			if(ch !=(char) 0) System.out.print(ch);
 		}
 		
+	}
+		//bigQ.q[3] = 'E'попытка изменения значения у закрытой переменной класса Queue;
+		//bigQ.putloc = 50;
 	}
 }
