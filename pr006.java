@@ -24,7 +24,7 @@ class pr006 {
                 }
                 System.out.println();
 
-                //Установление 6-го бита в кодировке символа (побитовая операция "ИЛИ")
+                //Установление 6-го бита в кодировке символа (побитовая операция "ИЛИ");
                 System.out.println();
 
                 for (int i=0; i<26; i++) {
@@ -34,7 +34,7 @@ class pr006 {
 
                         System.out.print(ch + " ");
                 }
-                /Примитивное шифрование (побитовая операция "Исключающее ИЛИ")
+                //Примитивное шифрование (побитовая операция "Исключающее ИЛИ")
                 System.out.println();
                 String msg = "Исходящая тестовая строка";
                 String encmsg = "";
@@ -76,5 +76,20 @@ class pr006 {
                                 System.out.print("0 ");
                 }
                 System.out.println();
+		v = v >>1;
         }
+
+	//Опирация ?
+	System.out.println();
+	//Выражение1 ? выражения2 : Выражение3
+	int val2 = -25;
+	int absval = val2 < 0 & -val2 : val2;
+
+	int result;
+	for (int i = -5; i<6; i++) {
+		result = i != 0 & 100/i : 0;
+		if ( i != 0)
+			System.out.println("100 / " + i + "равно" + result);
+	}
+	System.out.println( );
 }
