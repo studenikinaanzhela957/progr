@@ -1,24 +1,82 @@
-class StaticBlock (
-	stattc double rootof2; static double rootof3; static (
-		System.out.prtntln(*Внутри статического блока");
-		rootof2 = Math.sqrt(2.0):
-		root0f3 = Math.sqrt(3.0);
-	｝
-	StaticBlock(String msg) {
-	System.out.println(msg):
-class pr008
-	public static void main(String() args) t
+//Рекурсия 
+class Factorial {
+	int factR(int n) {
+		int result;
 
-	Factorlal f = new Factortal():
-	
-	System.out.printIn( Вычисление рекурсивным методом );
-	System.out-println(*Факториал факториала 3 равен + f. factR(3));
-	//Демонстрация работы статического блока
-	System.out-println():
-	StattcBlock ob = new StaticBlock("Внутри конструктора"):
-	Systen.out.println("Квадратный корень из 2:" +  StattcBlock.rootof2);
-	Systen.out.println(*Квадратный корень
-из
-3:
-+ StattcBlock.rootof2):
-+ StattcBlock. rootofg):
+		if(n==1) return 1;
+		result = factR(n-1) * n;
+		return result;
+	}
+	int factI(int n) {
+		int t, result;
+		result = 1;
+		for(t=1; t<n; t++)
+			result *= t;
+		return result;
+	}
+}
+
+//Статические переменные 
+class StaticDemo {
+	int x;
+	static int y;
+
+	int sum(){
+		return x + y;
+	}
+}
+class StaticBlock {
+	static double rootOf2;
+	static double rootOf3;
+	static {
+		System.out.println("Внутри статического блока");
+		rootOf2 = Math.sqrt(2.0);
+		rootOf3 = Math.sqrt(3.0);
+	}
+	StaticBlock(String msg) {
+		System.out.println(msg);
+	}
+}
+
+class pr008 {
+	public static void main(String[] args) {
+		Factorial f = new Factorial();
+
+
+	System.out.println("Вычисление факториала рекурсивным методом");
+	System.out.println("Факториал 3 равен " + f.factR(3));
+	System.out.println("Факториал 4 равен " + f.factR(4));
+	System.out.println("Факториал 5 равен " + f.factR(5));
+
+	System.out.println();
+
+	System.out.println("Вычисление факториала интеративным методом");
+	System.out.println("Факториал 3 равен " + f.factI(3));
+	System.out.println("Факториал 4 равен " + f.factI(4));
+	System.out.println("Факториал 5 равен " + f.factI(5));
+  
+	//Демонстарция использования статической переменной 
+	StaticDemo ob1 = new StaticDemo();
+	StaticDemo ob2 = new StaticDemo();
+
+	ob1.x = 10;
+	ob2.x = 20;
+
+	System.out.println("ob1.x и  ob2.x независимы друг от друга");
+	System.out.println("ob1.x: " + ob1.x + "\nob2.x" + ob2.x);
+
+	System.out.println();
+	System.out.println("Статическаяпеременная y является общей");
+	StaticDemo.y = 19;
+	System.out.println("Для y = 19");
+
+	System.out.println("ob1.sum():" + ob1.sum());
+	System.out.println("ob1.sum():" + ob2.sum());
+	//Демонстрация работы статического блока 
+	System.out.println();
+	StaticBlock ob = new StaticBlock("Внутри конструктора");
+
+	System.out.println("Квадратный корень из 2: " + StaticBlock.rootOf2);
+	System.out.println("Квадратный корень из 3: " + StaticBlock.rootOf3);
+	}  
+}
